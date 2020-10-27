@@ -185,7 +185,7 @@ def user_stats(df):
         print('the most recent year of birth : \n', recent)
         print('the most common year of birth : \n', common_birth)
     except KeyError : 
-        print("No data Gender / Birth Year available"
+        print("No data Gender / Birth Year available")
     
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -193,9 +193,10 @@ def user_stats(df):
     
 def display_row(df):
     """" Display some raw data """
+    #Asking to input how many raw lines data to be seen
     numrow = 0
     rawdata = input('Do you want to see some raw data? (yes/no)').lower()
-            
+        
     if rawdata not in ('yes','no') : 
         print('\n You didnt type correctly')
     elif rawdata == 'yes':     
@@ -205,11 +206,13 @@ def display_row(df):
             except ValueError:
                 print('Sorry, you have to type a number')
 
+            #Display number of lines
             numrow = int(numrow)
             print('You choose to display ',numrow ,' data lines \n \n')
             print(df.iloc[0:numrow,:],'\n')
 
             df3 = df.iloc[0:numrow,:]
+            #Display Summary for better information data analysis
             print('\n\n-----SUMMARY for ',numrow,'raw data lines-----\n')
             print('Average travel time for ',numrow,'lines : ',df3['Trip Duration'].mean())
             print('The longest travel time : ',df3['Trip Duration'].max())
