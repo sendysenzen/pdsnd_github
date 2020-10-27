@@ -32,6 +32,7 @@ def get_filters():
             continue
         else :
             city = city.lower()
+            print('\n you chose city : \n',city)
             break
                          
     # get user input for month (all, january, february, ... , june)
@@ -44,8 +45,9 @@ def get_filters():
         if month.title() not in ('January','February','March','April','May','June','All') : 
             print('You did not type the correct month')
             continue
-        else : 
+        else :
             month = month.title()
+            print('\n you chose month : \n',month) 
             break
     
     # get user input for day of week (all, monday, tuesday, ... sunday)
@@ -60,6 +62,7 @@ def get_filters():
             continue
         else : 
             day = day.title()
+            print('\n you chose day : \n',day)
             break
 
     print('-'*40)
